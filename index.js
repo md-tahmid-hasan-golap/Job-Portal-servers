@@ -37,10 +37,9 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
+    await client.connect();
 
-    const jobCollection = client.db('job-portal').collection('jobs');
-
+const jobCollection = client.db('job-portal').collection('jobs');
 
     app.post("/jobs", async (req, res) => {
       const job = req.body;
